@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sid | AI Portfolio</title>
 
+
+
+  <!-- CSS with version to bust browser cache -->
+  <link rel="stylesheet" href="style.css?v=2.0" />
+</head>
+
+
   <!-- SEO Meta Tags -->
-<meta name="description" content="Siddharth Nirmal's AI & Strategy Portfolio – showcasing AI, GenAI, LLMs, NLP, and Product Thinking.">
-<meta name="keywords" content="AI Portfolio, GenAI, LLM, AI Consultant, AI Product Manager, LangChain, Azure AI, IIM Ahmedabad">
-<meta name="author" content="Siddharth Nirmal">
+  <meta name="description" content="Siddharth Nirmal's AI & Strategy Portfolio – showcasing AI, GenAI, LLMs, NLP, and Product Thinking.">
+  <meta name="keywords" content="AI Portfolio, GenAI, LLM, AI Consultant, AI Product Manager, LangChain, Azure AI, IIM Ahmedabad">
+  <meta name="author" content="Siddharth Nirmal">
 
     <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -27,24 +34,29 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#blog">Blog</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Vanta Background Wrap -->
+<div id="vanta-bg">
   <section class="hero">
     <div class="hero-text">
       <h1>Kumar Siddharth Nirmal</h1>
       <p class="hero-subtitle">
-        IIM Ahmedabad · AI Strategy · Public Policy Systems · AI Solutions · Product Technology · Digital Transformation · Building Better World
+        IIM Ahmedabad · AI Strategy · Public Policy Systems · AI Solutions · Product Technology · Digital Transformation
       </p>
       <a href="#about" class="btn">Explore More</a>
     </div>
     <div class="hero-image">
       <div class="photo-frame">
-      <img src="image.jpeg" alt="Sid Profile" />
+        <img src="image.jpeg" alt="Sid Profile" />
     </div>
   </section>
+</div>
+
 
   <!-- About Section -->
   <section id="about" class="about-section">
@@ -153,8 +165,42 @@
   <a href="https://www.linkedin.com/in/kumar-siddharth-nirmal/" class="blog-btn" target="_blank">See All on LinkedIn</a>
 </section>
 
+<!-- Services Section -->
+<section class="services-section" id="services">
+    <h2 class="section-title">Assistance Offered in Following Services</h2>
+
+    <h3 class="subsection-title">AI and Analytics Capabilities</h3>
+    <div class="services-grid">
+      <div class="service-card" data-tooltip="Text data – NLP, prompts, chatbots">Text</div>
+      <div class="service-card" data-tooltip="Image data – classification, object detection">Image</div>
+      <div class="service-card" data-tooltip="Audio data – speech recognition, sound analysis">Audio</div>
+      <div class="service-card" data-tooltip="Video data – tagging, scene understanding">Video</div>
+      <div class="service-card" data-tooltip="Tabular data – dashboards, tables, reports">Tabular</div>
+      <div class="service-card" data-tooltip="Time-series – stock trends, anomaly detection, IoT & sensor forecasting">Time-Series</div>
+      <div class="service-card" data-tooltip="3D data – 3D modeling, spatial design, AR/VR assets">3D</div>
+      <div class="service-card" data-tooltip="Geospatial – maps, satellite data, spatial analytics">Geospatial</div>
+    </div>
+
+  <h3 class="subsection-title">Consulting & Strategic Capabilities</h3>
+  <ul class="consulting-tags">
+      <li>Business Analysis</li>
+      <li>Management Consulting</li>
+      <li>Project Management</li>
+      <li>Product Management</li>
+      <li>Public Policy Analytics</li>
+      <li>Change Management</li>
+      <li>Strategic Planning</li>
+      <li>UX Research</li>
+      <li>User Experience Design (UED)</li>
+      <li>Information Management</li>
+    </ul>
+  </section>
+
+   <div class="tooltip" id="tooltip"></div>
+
 <!-- Contact Section -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
+
   <h2>Let's Connect</h2>
   <p>If you're interested in collaboration, opportunities, or just want to say hello — feel free to reach out.</p>
   <a href="https://www.linkedin.com/in/kumar-siddharth-nirmal/" class="contact-btn" target="_blank">Connect on LinkedIn</a>
@@ -163,4 +209,42 @@
   <!-- Footer -->
   <footer style="text-align:center; padding: 2rem; font-size: 0.9rem;">
     © 2025 Siddharth Nirmal. All rights reserved.
-  </footer>
+
+ <!-- Vanta Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xffffff,
+      backgroundColor: 0x0a0a23,
+      points: 10.00,
+      maxDistance: 22.00,
+      spacing: 15.00
+    });
+  </script>
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', e => {
+        tooltip.textContent = card.getAttribute('data-tooltip');
+        tooltip.style.opacity = 1;
+      });
+      card.addEventListener('mousemove', e => {
+        tooltip.style.top = (e.pageY + 15) + 'px';
+        tooltip.style.left = (e.pageX + 15) + 'px';
+      });
+      card.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>
+

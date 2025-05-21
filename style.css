@@ -444,4 +444,115 @@ body.dark-mode .about-box {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+<<<<<<< HEAD
+=======
+} 
+
+.hero {
+  position: relative;
+  z-index: 1;
+  /* other styles */
+}
+
+/* Services Section Styles */
+.services-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #002b45; /* McKinsey Deep Blue */
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.service-card {
+  padding: 1rem;
+  background-color: #e6f1f9;
+  color: #002b45;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.service-card:hover {
+  background-color: #005eb8; /* McKinsey Electric Blue */
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Tooltip Styling */
+.service-card:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #002b45;
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 0.6rem;
+  z-index: 999;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  color: #002b45;
+  margin-bottom: 1rem;
+}
+
+.consulting-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.consulting-tags li {
+  background-color: #dceefb;
+  color: #002b45;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.consulting-tags li:hover {
+  background-color: #00a3e0; /* McKinsey Cyan */
+  color: #ffffff;
+}
+/* Contact Section */
+#contact {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+}
+
+.consulting-tags li:hover {
+  background-color: #00a3e0; /* McKinsey Cyan */
+  color: #ffffff;
+}
+
+* {
+  scroll-behavior: smooth;
+>>>>>>> e00d6c1 (Initial commit with updated portfolio site)
 } 
