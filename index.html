@@ -245,6 +245,53 @@
       });
     });
   </script>
+
+  <!-- Q&A Floating Widget -->
+<div id="qna-widget">
+  <button id="qna-toggle">Ask Me</button>
+  <div id="qna-panel">
+    <h3>Know Me Better</h3>
+    <div class="qna">
+      <button class="q">Who am I?</button>
+      <div class="a">I’m Siddharth Nirmal, a AI Product Consultant passionate about solving real-world problems using Generative AI, LLMs, and Analytics. With over a decade of techno-functional industry experience and a PGD/MBA from IIM Ahmedabad, I bridge deep technical expertise with strategic business insight. I’m also certified in SAFe 6 Product Management (PMPO), as well as AI and Advanced Analytics by IBM, Google, and Microsoft.</div>
+
+      <button class="q">How can I help businesses or startups?</button>
+      <div class="a">I help organizations design AI driven solutions whether it’s streamlining operations, building AI product applications, or generating strategic business insights. From ideation to execution, I support businesses with hands-on delivery, especially in LLMs, GenAI and Advanced Analytics.</div>
+
+      <button class="q">What technologies am I most confident in?</button>
+      <div class="a">I have hands-on experience with Azure AI Foundry, AWS SageMaker Jumpstart, Gemini AI Studio, OpenAI, LangChain, Hugging Face, FAISS, LLAMA, Ollama, and Databricks. I work across LLM fine-tuning, RAG systems, prompt engineering, and tools like Python, R, SQL, and Tableau.</div>
+
+      <button class="q">What kind of roles excite me to explore?</button>
+      <div class="a">I’m most excited about roles like AI Consultant, AI Product Manager, or AI Solution Architect positions where I can actually help build meaningful AI products. I enjoy connecting tech with real world use, solving problems, and helping businesses grow smarter with AI and Advanced Analytics.</div>
+
+      <button class="q">What are my hobbies and interests?</button>
+      <div class="a">I enjoy writing and reading about technology, strategy, and geopolitics, especially topics that connect global trends with innovation. I also love exploring future tech and business ideas. In my downtime, I listen to music (AR Rahman and techno are my favourite) and dive into PlayStation games like Ghost of Tsushima, God of War, and Star Wars Jedi: Fallen Order.</div>
+
+      <button class="q">Am I open to consulting or freelance work?</button>
+      <div class="a">Absolutely. I’m open to AI or analytics consulting, freelance product advisory, or co-creating something impactful with founders or research teams. I also bring experience in public policy analytics and can contribute to both public and private sector initiatives that demand strategic, data-driven decision-making with AI integration.</div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('qna-toggle').onclick = function () {
+      const panel = document.getElementById('qna-panel');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    };
+
+    const questions = document.querySelectorAll('.qna .q');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const allAnswers = document.querySelectorAll('.qna .a');
+        allAnswers.forEach(a => {
+          if (a !== answer) a.style.display = 'none';
+        });
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  });
+</script>
 </body>
 </html>
 
