@@ -631,3 +631,36 @@ body.dark-mode .about-box {
     box-shadow: 0 0 0 0 rgba(75, 108, 183, 0);
   }
 }
+
+@media screen and (max-width: 768px) {
+  #qna-widget {
+    left: 10px; /* tighter margins for smaller screens */
+    bottom: 10px;
+  }
+
+  #qna-panel {
+    width: 90vw;
+    max-height: 70vh;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .qna .q {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .qna .a {
+    font-size: 13px;
+  }
+
+  #qna-toggle {
+    padding: 14px 22px;
+    font-size: 16px;
+  }
+}
+
+.qna .q, .qna .a {
+  word-wrap: break-word;
+  white-space: normal;
+}
